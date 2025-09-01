@@ -14,7 +14,7 @@ const AuthWrapper = ({
         height={800}
         width={800}
         alt="auth bg"
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-10"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 opacity-[8%]"
       />
       <div className="min-h-screen bg-black flex flex-col">
         {/* Header with logo */}
@@ -30,7 +30,7 @@ const AuthWrapper = ({
               {title}
             </h1>
 
-            <div className="bg-gray-900 border border-gray-700 rounded-lg p-8">
+            <div className="bg-[#1818184F] border border-gray-700 rounded-lg p-12 md:px-16">
               {children}
             </div>
           </div>

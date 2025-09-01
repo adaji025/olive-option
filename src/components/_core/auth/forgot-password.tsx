@@ -1,9 +1,12 @@
 import React from "react";
-import AuthWrapper from "./auth-wrapper";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-const ForgotPassword = () => {
+interface IProps {
+  onEmailSent: () => void
+}
+
+const ForgotPassword = ({onEmailSent}: IProps) => {
   return (
     <div className="space-y-6">
       {/* Email field */}
@@ -26,6 +29,7 @@ const ForgotPassword = () => {
         </div>
       </div>
       <Button
+      onClick={onEmailSent}
         type="submit"
         className="h-12 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3"
       >

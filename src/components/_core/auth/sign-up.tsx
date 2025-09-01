@@ -123,7 +123,7 @@ const SignUp = () => {
       {/* Sign in link */}
       <div className="text-center text-gray-400 text-sm">
         Already have an account? <br />
-        <Link href="/signin" className="text-blue-400 hover:text-blue-300">
+        <Link href="/sign-in" className="text-blue-400 hover:text-blue-300">
           Sign In
         </Link>
       </div>

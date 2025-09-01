@@ -1,7 +1,6 @@
 "use client";
 import { GoogleIcon } from "@/components/svg";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
@@ -9,10 +8,9 @@ import React, { useState } from "react";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
-    <form className="space-y-6">
+    <form className="space-y-3">
       {/* Email field */}
       <div>
         <label
@@ -79,9 +77,9 @@ const SignIn = () => {
 
       {/* Sign in link */}
       <div className="text-center text-gray-400 text-sm">
-        Already have an account? <br />
-        <Link href="/signin" className="text-blue-400 hover:text-blue-300">
-          Sign In
+        Don’t have an account? <br />
+        <Link href="/sign-up" className="text-blue-400 hover:text-blue-300">
+          Sign Up
         </Link>
       </div>
     </form>
