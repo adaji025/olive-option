@@ -20,3 +20,54 @@ export const GoogleIcon = () => {
     </svg>
   );
 };
+
+export const ArrowIcon = () => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M-0.000156403 5.00016V11.0002H7.99984V15.8402L15.8398 8.00016L7.99984 0.160156V5.00016H-0.000156403Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
+export const ChartIcon = () => {
+  return (
+    <svg
+      width="19"
+      height="18"
+      viewBox="0 0 19 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2 0V16H18V18H0V0H2ZM17.2929 3.29289L18.7071 4.70711L13 10.4142L10 7.415L5.70711 11.7071L4.29289 10.2929L10 4.58579L13 7.585L17.2929 3.29289Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
+export const PortfolioIcon = () => {
+  return (
+    <svg
+      width="21"
+      height="20"
+      viewBox="0 0 21 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.5 4V1C5.5 0.44772 5.94772 0 6.5 0H14.5C15.0523 0 15.5 0.44772 15.5 1V4H19.5C20.0523 4 20.5 4.44772 20.5 5V19C20.5 19.5523 20.0523 20 19.5 20H1.5C0.94772 20 0.5 19.5523 0.5 19V5C0.5 4.44772 0.94772 4 1.5 4H5.5ZM7.5 12H2.5V18H18.5V12H13.5V15H7.5V12ZM18.5 6H2.5V10H7.5V8H13.5V10H18.5V6ZM9.5 10V13H11.5V10H9.5ZM7.5 2V4H13.5V2H7.5Z"
+        fill="#6B6C70"
+      />
+    </svg>
+  );
+};
