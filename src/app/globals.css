@@ -121,8 +121,13 @@
   }
 }
 
-.auth-bg {
-  background: url(../../public/image//auth-elipse.png);
-  background-position: center;
-  background-size: 50%;
+.site-nav-bar-scrollbar {
+  scrollbar-color: #4C66EB #2E4CE51A; /* thumb color, track color */
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
 }
+
+.site-nav-bar-scrollbar::-webkit-scrollbar-thumb {
+      background: black;
+      border-radius: 10px;
+    }
