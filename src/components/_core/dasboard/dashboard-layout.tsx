@@ -6,11 +6,11 @@ const DashboardLayout = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   return (
-    <div className="flex flex-col items-start">
+    <div className="w-full flex flex-col items-start">
       <SiteHeader />
-      <div className="flex items-start">
+      <div className="w-full flex items-start">
         <SideNav />
-        <div className="flex-1 p-4">{children}</div>
+        <div className="flex-1 p-4 w-full">{children}</div>
       </div>
     </div>
   );

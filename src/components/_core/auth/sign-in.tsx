@@ -55,15 +55,17 @@ const SignIn = () => {
         </Link>
       </div>
       {/* Sign up button */}
-      <Button
-        type="submit"
-        className="h-12 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3"
-      >
-        Log In
-      </Button>
+      <Link href="/dashboard">
+        <Button
+          type="submit"
+          className="h-12 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3"
+        >
+          Log In
+        </Button>
+      </Link>
 
       {/* Divider */}
-      <div className="text-center text-gray-400 text-sm">Continue with</div>
+      <div className="text-center mt-3 text-gray-400 text-sm">Continue with</div>
 
       {/* Google sign up button */}
       <Button

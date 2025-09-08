@@ -9,7 +9,7 @@ const TradingChart = dynamic(
 
 const Page = () => {
   return (
-    <div className="flex-1">
+    <div className="flex-1 bg-white w-full">
       <TradingChart />
     </div>
   );
