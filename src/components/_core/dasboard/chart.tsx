@@ -1,21 +1,13 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { POPULAR_STOCKS } from "@/lib/constant";
 import { Maximize2, Minimize2, Search } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
-const POPULAR_CRYPTOS = [
-  { symbol: "BTCUSD", name: "Bitcoin" },
-  { symbol: "ETHUSD", name: "Etherium" },
-  { symbol: "BNBUSD", name: "BNB" },
-  { symbol: "SOLUUSD", name: "Solana" },
-  { symbol: "ADAUSD", name: "Cardana" },
-  { symbol: "XRTUSD", name: "XRP" },
-  { symbol: "DOTUSD", name: "Polkadol" },
-  { symbol: "AVAXUSD", name: "Avalanche" },
-];
 
-const TradingChart = () => {
-  const [currentSymbol, setCurrentSymbol] = useState("BTCUSD");
+
+const StockChart = () => {
+  const [currentSymbol, setCurrentSymbol] = useState("AAPL");
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
@@ -63,10 +55,10 @@ const TradingChart = () => {
     // Create new widget
     widgetRef.current = new window.TradingView.widget({
       autosize: true,
-      symbol: currentSymbol,
+      symbol: `NASDAQ:${currentSymbol}`, // Add exchange prefix for stocks
       container_id: chartContainerRef.current.id,
       interval: "1D",
-      timezone: "Etc/UTC",
+      timezone: "America/New_York", // US market timezone
       theme: "light",
       style: "1",
       locale: "en",
@@ -75,6 +67,11 @@ const TradingChart = () => {
       hide_top_toolbar: false,
       hide_legend: false,
       save_image: false,
+      studies: [
+        "Volume@tv-basicstudies",
+        "RSI@tv-basicstudies",
+        "MACD@tv-basicstudies"
+      ],
     });
 
     // Cleanup function
@@ -90,10 +87,8 @@ const TradingChart = () => {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchTerm.trim()) {
-      // Ensure the symbol ends with USD for crypto pairs
-      const symbol = searchTerm.toUpperCase().endsWith("USD")
-        ? searchTerm.toUpperCase()
-        : searchTerm.toUpperCase() + "USD";
+      // Stock symbols are typically 1-5 characters, uppercase
+      const symbol = searchTerm.toUpperCase().trim();
       handleSymbolChange(symbol);
     }
   };
@@ -110,7 +105,7 @@ const TradingChart = () => {
 
   return (
     <div
-      className={`bg-white w-full rounded-lg shadow-lg ${
+      className={`bg-black w-full rounded-lg shadow-lg ${
         isFullScreen ? "fixed inset-0 z-50 rounded-none" : "relative"
       }`}
     >
@@ -122,8 +117,8 @@ const TradingChart = () => {
               {currentSymbol}
             </h2>
             <span className="text-sm text-gray-500">
-              {POPULAR_CRYPTOS.find((crypto) => crypto.symbol === currentSymbol)
-                ?.name || "Cryptocurrency"}
+              {POPULAR_STOCKS.find((stock) => stock.symbol === currentSymbol)
+                ?.name || "Stock"}
             </span>
           </div>
           {/* controls */}
@@ -134,7 +129,7 @@ const TradingChart = () => {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Enter crypto symbol"
+                  placeholder="Enter stock symbol"
                   // value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10 text-black pr-4 py-2 border border-gray-300 rounded-md focus:outline-none text-sm w-full sm:w-48"
@@ -160,26 +155,26 @@ const TradingChart = () => {
           </div>
         </div>
 
-        {/* Popular crypt buttons */}
+        {/* Popular stock buttons */}
         <div className="flex flex-wrap gap-2 mt-4">
-          {POPULAR_CRYPTOS.map((crypto) => (
+          {POPULAR_STOCKS.map((stock) => (
             <button
-              onClick={() => handleSymbolChange(crypto.symbol)}
-              key={crypto.symbol}
+              onClick={() => handleSymbolChange(stock.symbol)}
+              key={stock.symbol}
               className={`px-3 py-1 text-sm transition-colors rounded-md ${
-                currentSymbol === crypto.symbol
+                currentSymbol === stock.symbol
                   ? "bg-blue-500 text-white"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
-              {crypto.name}
+              {stock.name}
             </button>
           ))}
         </div>
 
         {/* Chart container */}
         <div
-          className={`bg-white mt-4 ${
+          className={`bg-black mt-4 ${
             isFullScreen ? "h-[calc(100vh-140px)]" : "h-[500px]"
           }`}
         >
@@ -194,4 +189,4 @@ const TradingChart = () => {
   );
 };
 
-export default TradingChart;
+export default StockChart;
