@@ -59,10 +59,10 @@ const StockChart = () => {
       container_id: chartContainerRef.current.id,
       interval: "1D",
       timezone: "America/New_York", // US market timezone
-      theme: "light",
+      theme: "dark",
       style: "1",
       locale: "en",
-      toolbar_bg: "#f1f3f6",
+      toolbar_bg: "#1e1e1e",
       enable_publishing: false,
       hide_top_toolbar: false,
       hide_legend: false,
@@ -110,13 +110,13 @@ const StockChart = () => {
       }`}
     >
       {/* Headers with controls */}
-      <div className="w-full bg-gray-100 p-4 border-green-500 border-b">
+      <div className="w-full bg-black p-4 border-green-500 border-b">
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
           <div className="flex items-center gap-2">
-            <h2 className="text-lg font-semibold text-gray-800">
+            <h2 className="text-lg font-semibold text-white">
               {currentSymbol}
             </h2>
-            <span className="text-sm text-gray-500">
+            <span className="text-sm text-gray-300">
               {POPULAR_STOCKS.find((stock) => stock.symbol === currentSymbol)
                 ?.name || "Stock"}
             </span>
@@ -132,14 +132,14 @@ const StockChart = () => {
                   placeholder="Enter stock symbol"
                   // value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 text-black pr-4 py-2 border border-gray-300 rounded-md focus:outline-none text-sm w-full sm:w-48"
+                  className="pl-10 text-white bg-gray-800 border border-gray-600 rounded-md focus:outline-none text-sm w-full sm:w-48"
                 />
               </div>
               <Button>Search</Button>
             </form>
             <button
               onClick={toggleFullScreen}
-              className="flex items-center gap-2 px-3 text-gray-700 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors text-sm"
+              className="flex items-center gap-2 px-3 text-gray-200 py-2 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors text-sm"
             >
               {isFullScreen ? (
                 <>
@@ -164,7 +164,7 @@ const StockChart = () => {
               className={`px-3 py-1 text-sm transition-colors rounded-md ${
                 currentSymbol === stock.symbol
                   ? "bg-blue-500 text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  : "bg-gray-700 text-gray-200 hover:bg-gray-600"
               }`}
             >
               {stock.name}
