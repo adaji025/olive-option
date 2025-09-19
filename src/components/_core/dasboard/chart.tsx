@@ -110,7 +110,7 @@ const StockChart = () => {
       }`}
     >
       {/* Headers with controls */}
-      <div className="w-full bg-black p-4 border-green-500 border-b">
+      <div className="w-full bg-black p-4">
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
           <div className="flex items-center gap-2">
             <h2 className="text-lg font-semibold text-white">
