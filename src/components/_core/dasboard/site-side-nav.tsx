@@ -74,7 +74,7 @@ const SideNav = () => {
   const currentRoute = pathName === "/dashboard" ? ["dashboard"] : segment;
 
   return (
-    <div className="site-nav-bar-scrollbar px-6 pb-6 h-screen grid gap-8 sticky top-10 overflow-auto">
+    <div className="site-nav-bar-scrollbar px-6 pb-6 border-r border-[#6B6C70CC] h-screen grid gap-8 sticky top-10 overflow-auto">
       <div className="relative">
         <div className="ab max-w-[80px]  w-full">
           <div

@@ -1,9 +1,12 @@
-import React from 'react'
+import TradeHistory from "@/components/_core/trade-history";
+import React from "react";
 
 const Page = () => {
   return (
-    <div>Page</div>
-  )
-}
+    <div>
+      <TradeHistory />
+    </div>
+  );
+};
 
-export default Page
+export default Page;
